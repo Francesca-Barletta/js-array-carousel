@@ -45,13 +45,13 @@ img{
     background-color: white;
     
 }
-.next{
+.prev{
     position: absolute;
     top: 15px;
     left: 50%;
     transform: translateX(-50%);
 }
-.prev{
+.next{
     position: absolute;
     bottom: 15px;
     left: 50%;

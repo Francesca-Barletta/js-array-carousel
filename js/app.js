@@ -33,31 +33,55 @@ const imgArray = ["./img/01.webp", "./img/02.webp", "./img/03.webp", "./img/04.w
 const divContainerDOMElment = document.querySelector('.items-container');
 
 
-    //qui gli elementi che servono dentro il ciclo for:
-    //tutti gli items del DOM
-         //const imgItemArrayDOMElement = document.getElementsByClassName('item')
-    //console.log(imgItemDOMElement);
-    //il primo item della lista
-         //let firstImgItem = imgItemArrayDOMElement[0];
+//qui gli elementi che servono dentro il ciclo for:
+//tutti gli items del DOM
+//const imgItemArrayDOMElement = document.getElementsByClassName('item')
+//console.log(imgItemDOMElement);
+//il primo item della lista
+//let firstImgItem = imgItemArrayDOMElement[0];
 
-for(let index = 0; index < imgArray.length; index++){
-   //console.log(imgArray[i]) 
-   // con i ciclo for inserisco nell'html le immagini
- divContainerDOMElment.innerHTML += `
+let currentImgItem = 0;
+//let beforeCurrentItem = currentImgItem--;
+
+for (let index = 0; index < imgArray.length; index++) {
+    //console.log(imgArray[i]) 
+    // con i ciclo for inserisco nell'html le immagini
+    divContainerDOMElment.innerHTML += `
     <div class="item">
         <img src="${imgArray[index]}" alt="">
     </div>`
-    
-    const imgItemArrayDOMElement = document.getElementsByClassName('item');
-    let firstImgItem = imgItemArrayDOMElement[0];
+}
+
+// Ho creato gli elementi
+const imgItemArrayDOMElement = document.getElementsByClassName('item');
+//firstImgItem = imgItemArrayDOMElement[0];
 //ora gli elementi sono presenti ma sono in display none
 //devo fare in modo che il primo elemento che vedo sia in classe active per avere display block
 //devo recuperare gli elementi con classe item
 //dichiaro tutto fuori dal ciclo for per renderlo leggebile all'interno ma non replicare più volte la stessa cosa
 //a questo punto al primo item devo aggiungere la classe active
-    firstImgItem.classList.add("active");
+imgItemArrayDOMElement[currentImgItem].classList.add("active");
 
-
+// prendo nel dom il pulsante (div) next
+const nextButtonDOMElement = document.querySelector('.next');
+// gli dò una funzione al click
+nextButtonDOMElement.addEventListener('click', function () {
  
+//al click dico che l'index di imgarray aumenta di uno
+    currentImgItem = currentImgItem + 1;
+    let beforeImg = currentImgItem - 1;
+    //gli aggiungo la classe active
+    imgItemArrayDOMElement[currentImgItem].classList.add('active');
+    imgItemArrayDOMElement[beforeImg].classList.remove('active');
 
-}
+    //imgItemArrayDOMElement[beforeCurrentItem].classList.remove('active');
+    // con lo stesso click devo togliere la classe active dal index precedente
+    
+
+    //devo dirgli che al click la classe active si toglie dal primo item e passa a quello successivo
+    // for(let i = 0; i < imgItemArrayDOMElement.length; i++){
+    //    firstImgItem = firstImgItem + imgItemArrayDOMElement[i]
+    //}
+    //creo un ciclo for che incrementa il primo item di 1 
+    //for(firstImgItem; firstImgItem < imgItemArrayDOMElement.length; firstImgItem++)
+});
