@@ -30,16 +30,34 @@ const imgArray = ["./img/01.webp", "./img/02.webp", "./img/03.webp", "./img/04.w
 //devo accedere a tutti gli elementi dell'array
 //creo un ciclo for per leggere tutta la array
 // fuori dal ciclo for mi prendo l'elemento del dom dove inserire l'html
-const imgItemDOMElment = document.querySelector('.items-container');
+const divContainerDOMElment = document.querySelector('.items-container');
 
 
+    //qui gli elementi che servono dentro il ciclo for:
+    //tutti gli items del DOM
+         //const imgItemArrayDOMElement = document.getElementsByClassName('item')
+    //console.log(imgItemDOMElement);
+    //il primo item della lista
+         //let firstImgItem = imgItemArrayDOMElement[0];
 
-
-for(let i = 0; i < imgArray.length; i++){
+for(let index = 0; index < imgArray.length; index++){
    //console.log(imgArray[i]) 
    // con i ciclo for inserisco nell'html le immagini
- imgItemDOMElment.innerHTML += `
+ divContainerDOMElment.innerHTML += `
     <div class="item">
-        <img src="${imgArray[i]}" alt="">
+        <img src="${imgArray[index]}" alt="">
     </div>`
+    
+    const imgItemArrayDOMElement = document.getElementsByClassName('item');
+    let firstImgItem = imgItemArrayDOMElement[0];
+//ora gli elementi sono presenti ma sono in display none
+//devo fare in modo che il primo elemento che vedo sia in classe active per avere display block
+//devo recuperare gli elementi con classe item
+//dichiaro tutto fuori dal ciclo for per renderlo leggebile all'interno ma non replicare più volte la stessa cosa
+//a questo punto al primo item devo aggiungere la classe active
+    firstImgItem.classList.add("active");
+
+
+ 
+
 }
