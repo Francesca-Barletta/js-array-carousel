@@ -68,19 +68,19 @@ const nextButtonDOMElement = document.querySelector('.next');
 nextButtonDOMElement.addEventListener('click', function () {
     
    
-//al click dico che l'index di imgarray aumenta di uno
+    //al click dico che l'index di imgarray aumenta di uno
     let beforeImg = currentImgItem;
     currentImgItem = currentImgItem + 1;
-    
+
     //gli aggiungo la classe active
 
-    if(currentImgItem === imgItemArrayDOMElement.length--){
+    if (currentImgItem === imgItemArrayDOMElement.length--) {
         currentImgItem = 0;
     }
 
     imgItemArrayDOMElement[currentImgItem].classList.add('active');
     imgItemArrayDOMElement[beforeImg].classList.remove('active');
-  
+
     //imgItemArrayDOMElement[beforeCurrentItem].classList.remove('active');
     // con lo stesso click devo togliere la classe active dal index precedente
     //devo dirgli che al click la classe active si toglie dal primo item e passa a quello successivo
@@ -95,23 +95,23 @@ const prevButtonDOMElement = document.querySelector('.prev');
 
 
 prevButtonDOMElement.addEventListener('click', function () {
- 
-//al click dico che se l'indice è zero cliccando deve diventare 5
 
- let beforeImg = currentImgItem;
+    //al click dico che se l'indice è zero cliccando deve diventare 5
 
- if(currentImgItem === 0){
-    currentImgItem = imgItemArrayDOMElement.length--;
-   
- } console.log(currentImgItem);
- currentImgItem = currentImgItem - 1;
-   
+    let beforeImg = currentImgItem;
+
+    if (currentImgItem === 0) {
+        currentImgItem = imgItemArrayDOMElement.length--;
+
+    }
+    currentImgItem = currentImgItem - 1;
+
     //dico che l'indice deve andare a diminuire
-   
+
 
     //dichiaro la variabile before che sarà uguale all'indice +1
-    
-   //dico che quando l'indice deve essere visibile
+
+    //dico che quando l'indice deve essere visibile
     imgItemArrayDOMElement[currentImgItem].classList.add('active');
     imgItemArrayDOMElement[beforeImg].classList.remove('active');
 
