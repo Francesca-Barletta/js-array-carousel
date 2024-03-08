@@ -69,9 +69,9 @@ nextButtonDOMElement.addEventListener('click', function () {
     
    
 //al click dico che l'index di imgarray aumenta di uno
-
+    let beforeImg = currentImgItem;
     currentImgItem = currentImgItem + 1;
-    let beforeImg = currentImgItem - 1;
+    
     //gli aggiungo la classe active
 
     if(currentImgItem === imgItemArrayDOMElement.length--){
