@@ -85,3 +85,25 @@ nextButtonDOMElement.addEventListener('click', function () {
     //creo un ciclo for che incrementa il primo item di 1 
     //for(firstImgItem; firstImgItem < imgItemArrayDOMElement.length; firstImgItem++)
 });
+const prevButtonDOMElement = document.querySelector('.prev');
+// gli dò una funzione al click
+prevButtonDOMElement.addEventListener('click', function () {
+ 
+//al click dico che l'index di imgarray aumenta di uno
+    currentImgItem = currentImgItem - 1;
+    let beforeImg = currentImgItem + 1;
+    //gli aggiungo la classe active
+    imgItemArrayDOMElement[currentImgItem].classList.add('active');
+    imgItemArrayDOMElement[beforeImg].classList.remove('active');
+
+    //imgItemArrayDOMElement[beforeCurrentItem].classList.remove('active');
+    // con lo stesso click devo togliere la classe active dal index precedente
+    
+
+    //devo dirgli che al click la classe active si toglie dal primo item e passa a quello successivo
+    // for(let i = 0; i < imgItemArrayDOMElement.length; i++){
+    //    firstImgItem = firstImgItem + imgItemArrayDOMElement[i]
+    //}
+    //creo un ciclo for che incrementa il primo item di 1 
+    //for(firstImgItem; firstImgItem < imgItemArrayDOMElement.length; firstImgItem++)
+});
